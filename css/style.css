@@ -1,0 +1,141 @@
+/* Import Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@100;200;300;400;700&display=swap');
+
+* {
+  /* Defaults */
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+
+  /* Font */
+  --font-family-main: 'Karla';
+
+  /* Colors Primary */
+  --cyan: hsl(179, 62%, 43%);
+  --bright-yellow: hsl(71, 73%, 54%);
+  --glacier: hsl(180, 38%, 58%);
+
+  /* Colors Neutral */
+  --light-gray: hsl(204, 43%, 93%);
+  --grayish-blue: hsl(218, 22%, 67%);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: fixed;
+  bottom: 1rem;
+  left: 0;
+  right: 0;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+body {
+  font-family: var(--font-family-main), sans-serif;
+  padding: 25px;
+}
+
+.grid-container {
+  display: grid;
+  column-count: 3;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.25);
+  border-radius: 5px;
+}
+.grid-container > * {
+  padding: 25px;
+}
+
+.title {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.grid-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+.join {
+}
+
+.join__title {
+  color: var(--cyan);
+}
+.join__subtitle {
+  color: var(--bright-yellow);
+  font-size: 1.1rem;
+}
+.join__description {
+  color: var(--grayish-blue);
+  line-height: 1.7;
+}
+
+.subscription {
+  background-color: var(--cyan);
+  color: white;
+}
+.subscription__plan {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.subscription__price {
+  font-size: 2.5rem;
+}
+.subscription__time {
+  color: var(--light-gray);
+  font-weight: 200;
+}
+.subscription__description {
+  margin-top: 10px;
+}
+.subscription__btn-sign-up {
+  border: none;
+  border-radius: 5px;
+  height: 50px;
+  background-color: var(--bright-yellow);
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.25);
+  color: white;
+  margin-top: 20px;
+}
+
+.why {
+  background-color: var(--glacier);
+  color: white;
+}
+.why__list {
+  list-style: none;
+  font-weight: 200;
+}
+.why__item {
+  margin-bottom: 3px;
+}
+
+@media (min-width: 768px) {
+  body {
+    height: 100vh;
+    display: flex;
+  }
+  .grid-container {
+    margin: auto;
+    column-count: 2;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    max-width: 768px;
+  }
+  .join {
+    grid-column: 1 / span 2;
+    gap: 0px;
+  }
+  .subscription {
+    grid-row: 2;
+  }
+  .why {
+    grid-row: 2;
+  }
+}
